@@ -737,7 +737,7 @@ let main () =
         Filename.temp_file ~temp_dir:tmpdir "image." "" in
     let fn = output_filename fn fmt in
     (* Produce the output image. *)
-    g#disk_create fn fmt cmdline.size;
+    (* g#disk_create fn fmt cmdline.size; *)
     g#add_drive ~readonly:false ~format:fmt fn;
 
     (* Helper drive for elements and binaries. *)

@@ -159,8 +159,10 @@ let load_dependencies elements loaded_elements =
     error (f_"following elements are already provided by another element:\n%s")
       (Buffer.contents buf)
   );
-  if not (StringSet.mem "operating-system" !provided) then
-    error (f_"please include an operating system element");
+  (*
+   * if not (StringSet.mem "operating-system" !provided) then
+   *   error (f_"please include an operating system element");
+   *)
   StringSet.diff !final !provided
 
 let copy_element element destdir blacklist =
